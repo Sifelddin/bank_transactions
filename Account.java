@@ -1,17 +1,17 @@
 package Bank;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Account {
    int balance;
    int previousTransaction;
    String customerName;
-   String customerId;
+   String customerId = UUID.randomUUID().toString().toUpperCase();
 
    // constructor
-   Account(String cname, String cid) {
+   Account(String cname) {
       customerName = cname;
-      customerId = cid;
    }
 
    // add money to the account
@@ -54,8 +54,8 @@ public class Account {
    void showMenu() {
       char option;
       Scanner scanner = new Scanner(System.in);
-      System.out.println("welcom, " + customerName + "!");
-      System.out.println("your ID is: " + customerId + "!");
+      System.out.println("welcome, " + customerName + "!");
+      System.out.println("your ID is:  " + customerId);
       System.out.println();
       menu();
       do {
